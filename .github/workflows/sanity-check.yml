@@ -1,0 +1,20 @@
+name: PR Sanity Check
+
+on: pull_request
+
+jobs:
+  lint:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install packages
+        run: |
+          npm install
+      - name: Run ESlint
+        run: |
+          npm run lint
+      - name: Run Stylelint
+        run: |
+          npm run stylelint
