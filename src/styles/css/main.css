@@ -1,0 +1,46 @@
+@import-glob "../components/**/*.css";
+
+/* can consume `node_modules`, `web_modules` or local modules */
+
+/* css/input.css */
+
+/* @import "cssrecipes-defaults";
+@import "normalize.css";
+
+@import "foo.css"; 
+
+@import "bar.css" (min-width: 25em);
+
+@import 'baz.css' layer(baz-layer); */
+
+@font-face {
+  font-family: Roboto;
+  src: url("../../fonts/Roboto-Regular.ttf") format("ttf");
+  src: url("../../fonts/Roboto-Bold.ttf") format("ttf");
+}
+
+header {
+  margin: 1rem;
+}
+
+nav {
+  align-items: center;
+  margin: 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  font-family: Roboto, sans-serif;
+  text-align: center;
+  text-decoration: none;
+}
+
+a:visited {
+  color: blue;
+}
+
+a:hover {
+  transform: scale(1.2);
+}
