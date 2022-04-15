@@ -1,1 +1,0 @@
-{"version":3,"file":"bundle.js","mappings":"yBAGA,IACQA,GAAAA,EAAKC,SAASC,cAAc,QAC/BC,UAAY,kBACfH,EAAGI,UAAH,4TAeAH,SAASI,cAAc,QAAQC,YAAYN,G","sources":["webpack://otus-javascript-blog/./src/index.js"],"names":["el","document","createElement","className","innerHTML","querySelector","appendChild"],"sourceRoot":""}

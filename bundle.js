@@ -1,2 +1,0 @@
-!function(){"use strict";var e;(e=document.createElement("div")).className="content-wrapper",e.innerHTML='\n    <header>\n      <h1>\n        Личный блог\n      </h1>\n      <nav>\n        <a href="/home">Блог</a>\n        <a href="/list">Список постов</a>\n        <a href="/write">Написать пост</a>\n        <a href="/feedback">Обратная связь</a>\n        <a href="/about">О проекте</a>\n      </nav>\n    </header>\n',document.querySelector("#app").appendChild(e)}();
-//# sourceMappingURL=bundle.js.map
