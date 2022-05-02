@@ -1,0 +1,8 @@
+.idea
+.eslintcache
+.stylelintcache
+.sass-cache
+node_modules
+build
+dist
+coverage
