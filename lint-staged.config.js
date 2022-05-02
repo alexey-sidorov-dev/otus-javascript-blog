@@ -3,6 +3,6 @@ module.exports = {
     "eslint --config eslint.config.js --cache --fix",
     "prettier --write",
   ],
-  "*.css": "stylelint --cache --fix",
-  "*.{json,md,html,css}": "prettier --write",
+  "*.{css,scss}": "stylelint --cache --fix",
+  "*.{json,md,html,css,scss}": "prettier --write",
 };

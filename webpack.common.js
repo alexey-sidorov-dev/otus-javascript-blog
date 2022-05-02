@@ -1,23 +1,20 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 const path = require("path");
-const fg = require("fast-glob");
 
 const distPath = path.resolve(__dirname, "./dist");
 const srcPath = path.resolve(__dirname, "./src");
-const pagesPath = path.resolve(srcPath, "./pages");
-const pagesStr = "./src/pages/";
-const files = fg.sync(`${pagesStr}*.html`);
+
+const pages = ["index", "list", "post", "feedback", "about"];
 
 const devMode = process.env.NODE_ENV !== "production";
 
 module.exports = {
   entry: () => {
     const entry = {};
-    files.map((file) => {
-      const name = file.replace(pagesStr, "").replace(".html", "");
-      entry[name] = `./${name}.js`;
-      return file;
+    pages.forEach((page) => {
+      entry[page] = `./${page}.js`;
     });
 
     return entry;
@@ -45,23 +42,27 @@ module.exports = {
           },
         },
       },
+
       {
-        test: /\.(sa|sc|c)ss$/,
+        test: /\.(handlebars|hbs)$/,
+        loader: "handlebars-loader",
+      },
+
+      {
+        test: /\.html$/i,
+        loader: "html-loader",
+      },
+
+      {
+        test: /\.(sc|c)ss$/i,
         use: [
           devMode ? "style-loader" : MiniCssExtractPlugin.loader,
-          {
-            loader: "css-loader",
-            options: {
-              // Run `postcss-loader` on each CSS `@import` and CSS modules/ICSS imports
-              // Do not forget that `sass-loader` compile non CSS `@import`'s into a single file
-              // If you need run `sass-loader` and `postcss-loader` on each CSS `@import` please set it to `2`
-              importLoaders: 1,
-            },
-          },
+          "css-loader",
           "postcss-loader",
           "sass-loader",
         ],
       },
+
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: "asset/resource",
@@ -71,10 +72,7 @@ module.exports = {
             : "./images/[contenthash][ext]",
         },
       },
-      {
-        test: /\.html$/i,
-        loader: "html-loader",
-      },
+
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
         type: "asset/resource",
@@ -88,13 +86,15 @@ module.exports = {
   },
 
   plugins: [
-    ...files.map(
-      (file) =>
+    ...pages.map(
+      (page) =>
         new HtmlWebpackPlugin({
-          filename: file.replace(pagesStr, ""), // "index.html"
-          template: path.resolve(pagesPath, `./${file.replace(pagesStr, "")}`), // "./src/pages/index.html"
-          chunks: [file.replace(pagesStr, "").replace(".html", "")], // ["index"]
+          filename: `${page}.html`,
+          template: path.resolve(__dirname, "./src/pages/index.html"),
+          chunks: [page],
           inject: true,
+          favicon: "../images/favicon.svg",
+          meta: { description: "Personal blog about everything." },
         })
     ),
   ].concat(
@@ -104,6 +104,14 @@ module.exports = {
           new MiniCssExtractPlugin({
             filename: "[name].[contenthash].css",
             chunkFilename: "[id].[contenthash].css",
+          }),
+          new CopyWebpackPlugin({
+            patterns: [
+              {
+                from: path.resolve(__dirname, `${srcPath}/public`),
+                to: distPath,
+              },
+            ],
           }),
         ]
   ),

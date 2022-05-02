@@ -1,23 +1,9 @@
 import "modern-css-reset";
-import "../styles/css/main.css";
+import "../styles/scss/main.scss";
 
-(() => {
-  const el = document.createElement("div");
-  el.className = "content-wrapper";
-  el.innerHTML = `
-    <header>
-      <h1>
-      О проекте
-      </h1>
-      <nav>
-        <a href="./index.html">Блог</a>
-        <a href="./list.html">Список постов</a>
-        <a href="./post.html">Написать пост</a>
-        <a href="./feedback.html">Обратная связь</a>
-        <a href="./about.html">О проекте</a>
-      </nav>
-    </header>
-`;
+const page = require("../templates/page.hbs");
 
-  document.querySelector("#app").appendChild(el);
-})();
+const div = document.createElement("div");
+div.className = "content-wrapper";
+div.innerHTML = page({ title: "О блоге" });
+document.querySelector("#app").appendChild(div);

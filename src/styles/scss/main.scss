@@ -1,22 +1,16 @@
-@import-glob "../components/**/*.css";
-
-/* can consume `node_modules`, `web_modules` or local modules */
-
-/* css/input.css */
-
-/* @import "cssrecipes-defaults";
-@import "normalize.css";
-
-@import "foo.css"; 
-
-@import "bar.css" (min-width: 25em);
-
-@import 'baz.css' layer(baz-layer); */
-
 @font-face {
   font-family: Roboto;
   src: url("../../fonts/Roboto-Regular.ttf") format("ttf");
   src: url("../../fonts/Roboto-Bold.ttf") format("ttf");
+}
+
+h1 {
+  font-family: Roboto, sans-serif;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: bold;
+  text-align: center;
+  margin: 1rem;
 }
 
 header {
@@ -29,6 +23,10 @@ nav {
   text-align: center;
   display: flex;
   flex-direction: column;
+}
+
+.nav__logo {
+  content: url("../../images/logo.png");
 }
 
 a {

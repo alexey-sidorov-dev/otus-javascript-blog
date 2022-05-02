@@ -12,10 +12,20 @@ module.exports = merge(common, {
         host: "localhost",
         port: 3000,
         proxy: "http://localhost:9000/",
+        reloadDelay: 0,
+        // https://github.com/Va1/browser-sync-webpack-plugin/issues/88
+        files: [
+          "**/*.css",
+          {
+            match: "**/*.js",
+            options: {
+              ignored: "dist/**/*.js",
+            },
+          },
+        ],
       },
       {
         reload: false,
-        injectCss: true,
       }
     ),
   ],
