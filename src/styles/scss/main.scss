@@ -1,14 +1,8 @@
-@font-face {
-  font-family: Roboto;
-  src: url("../../fonts/Roboto-Regular.ttf") format("ttf");
-  src: url("../../fonts/Roboto-Bold.ttf") format("ttf");
-}
+@import "./fonts";
 
 h1 {
-  font-family: Roboto, sans-serif;
+  font-family: "Roboto Bold", sans-serif;
   font-size: 36px;
-  font-style: normal;
-  font-weight: bold;
   text-align: center;
   margin: 1rem;
 }
@@ -26,11 +20,11 @@ nav {
 }
 
 .nav__logo {
-  content: url("../../images/logo.png");
+  content: url("../../images/logo.svg");
 }
 
 a {
-  font-family: Roboto, sans-serif;
+  font-family: "Roboto Regular", sans-serif;
   text-align: center;
   text-decoration: none;
 }
