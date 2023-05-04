@@ -1,5 +1,5 @@
 import "modern-css-reset";
-import "../styles/scss/main.scss";
+import "../styles/styles.scss";
 
 const page = require("../templates/page.hbs");
 

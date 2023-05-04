@@ -6,6 +6,7 @@
 
 [![Actions Status](https://github.com/alexey-sidorov-dev/otus-javascript-blog/workflows/PR%20Sanity%20Check/badge.svg)](https://github.com/alexey-sidorov-dev/otus-javascript-blog/actions)
 [![Actions Status](https://github.com/alexey-sidorov-dev/otus-javascript-blog/workflows/Deploy%20to%20GitHub%20Pages/badge.svg)](https://alexey-sidorov-dev.github.io/otus-javascript-blog)
+[![LICENSE](https://img.shields.io/badge/license-ISC-brightgreen.svg)](ISC)
 
 ## Цель
 

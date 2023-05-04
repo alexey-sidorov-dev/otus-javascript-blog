@@ -1,0 +1,61 @@
+@import "./header";
+@import "./footer";
+@import "./social";
+
+.app {
+  min-height: 100vh;
+  background-image: url("../images/main.jpg");
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+
+.header {
+  height: 15%;
+}
+
+.main {
+  height: auto;
+  width: auto;
+}
+
+.footer {
+  height: 10%;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-around;
+}
+
+nav {
+  align-items: center;
+  margin: 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  content: url("../images/logo.svg");
+  width: auto;
+  height: 2rem;
+}
+
+a {
+  font-family: "Roboto Regular", sans-serif;
+  text-align: center;
+  text-decoration: none;
+}
+
+a:visited {
+  color: blue;
+}
+
+a:hover {
+  transform: scale(1.2);
+}
