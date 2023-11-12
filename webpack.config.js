@@ -91,11 +91,11 @@ module.exports = {
       (page) =>
         new HtmlWebpackPlugin({
           filename: `${page}.html`,
-          template: path.resolve(__dirname, "./src/templates/index.html"),
+          template: path.resolve(__dirname, "./public/index.html"),
           chunks: [page],
           inject: true,
           favicon: path.resolve(__dirname, "./src/images/favicon.svg"),
-        })
+        }),
     ),
   ],
 };
@@ -135,8 +135,8 @@ if (devMode) {
       },
       {
         reload: false,
-      }
-    )
+      },
+    ),
   );
 }
 
@@ -154,7 +154,7 @@ if (prodMode) {
           to: path.resolve(__dirname, "./dist"),
         },
       ],
-    })
+    }),
   );
   module.exports.optimization = {
     minimize: true,

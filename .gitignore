@@ -1,4 +1,6 @@
 .idea
+.vscode
+.vs
 .eslintcache
 .stylelintcache
 .sass-cache
