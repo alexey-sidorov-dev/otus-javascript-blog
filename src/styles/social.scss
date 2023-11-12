@@ -1,0 +1,31 @@
+.telegram-icon {
+  width: 2rem;
+  height: 2rem;
+  content: url("../images/telegram.svg");
+  alt: "Telegram";
+  display: block;
+
+  &::after {
+    content: "Telegram";
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.github-icon {
+  width: 2rem;
+  height: 2rem;
+  content: url("../images/github.svg");
+  display: block;
+  alt: "GitHub";
+
+  &::after {
+    content: "GitHub";
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
